@@ -1,0 +1,20 @@
+spring:
+  thymeleaf:
+    mode: LEGACYHTML5
+    cache: false
+  datasource:
+    url: jdbc:postgresql://localhost:5432/userdb
+    username: userman
+    password: S3c3r3t!
+  jpa:
+    show-sql: true
+    ddl-auto: update
+    properties:
+      hibernate.dialect: org.hibernate.dialect.PostgreSQL94Dialect
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+  queries:
+    users-query: select email, password, active from rkk_user where email=?
+    roles-query: select u.email, r.role from rkk_user u inner join user_role ur on(u.user_id=ur.user_id) inner join rkk_role r on(ur.role_id=r.role_id) where u.email=?
+
