@@ -4,14 +4,14 @@ spring:
     cache: false
   datasource:
     url: jdbc:postgresql://localhost:5432/userdb
-    username: userman
-    password: S3c3r3t!
+    username: postgres
+    password: postGreSql
   jpa:
     show-sql: true
-    ddl-auto: update
     properties:
       hibernate.dialect: org.hibernate.dialect.PostgreSQL94Dialect
     hibernate:
+      ddl-auto: update
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
   queries:
